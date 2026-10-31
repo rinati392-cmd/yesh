@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="940" viewBox="0 0 1200 940">
+<defs><radialGradient id="g"><stop stop-color="#63594F"/><stop offset="1" stop-color="#26261F"/></radialGradient><linearGradient id="edge" x2="1" y2=".3"><stop stop-color="#C8BEB0"/><stop offset="1" stop-color="#A89B8A"/></linearGradient></defs>
+<rect width="1200" height="940" fill="url(#g)"/>
+<g fill="none" stroke="#81776A" opacity=".3"><circle cx="626" cy="475" r="342"/><circle cx="626" cy="475" r="258"/><circle cx="626" cy="475" r="171"/><path d="M0 475H1200M626 0V940"/></g>
+<g transform="translate(600 480)"><circle r="287" fill="#BAAFA1"/><path d="M-220 55 A220 220 0 1 1 220 55 L100 55 A100 100 0 1 0 -100 55 Z" fill="#26261F"/><circle r="92" fill="#26261F"/><circle r="31" fill="#BAAFA1"/></g>
+<g font-family="Arial,sans-serif" fill="#E8E2D9"><text x="65" y="85" letter-spacing="5" font-size="22">ORBIT</text><text x="1130" y="85" text-anchor="end" letter-spacing="3" font-size="15">SPACES IN MOTION</text><text x="68" y="842" font-weight="700" font-size="155" letter-spacing="-8">ORBIT.</text><text x="73" y="888" letter-spacing="4" font-size="17">THE NEW CENTER OF GRAVITY</text></g>
+</svg>

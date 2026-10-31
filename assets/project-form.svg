@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="940" viewBox="0 0 1200 940">
+<defs><linearGradient id="bg" x2=".95" y2="1"><stop stop-color="#C9BDAE"/><stop offset="1" stop-color="#908173"/></linearGradient><linearGradient id="slab" x2="1" y2="1"><stop stop-color="#E8E2D9"/><stop offset="1" stop-color="#BAAFA1"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
+<rect width="1200" height="940" fill="url(#bg)"/>
+<path d="M0 710 L1200 350 L1200 940 L0 940Z" fill="#7E7164" opacity=".17"/>
+<g fill="#26261F" font-family="Arial,sans-serif"><text x="64" y="80" font-size="23" letter-spacing="6">FORM / 01</text><text x="1130" y="80" text-anchor="end" font-size="15" letter-spacing="2">PLACE. REIMAGINED.</text></g>
+<g transform="translate(262 160)">
+<ellipse cx="355" cy="640" rx="390" ry="45" fill="#39362F" opacity=".14" filter="url(#shadow)"/>
+<path d="M96 342 L540 170 L750 291 L304 468Z" fill="#F3EEE7"/>
+<path d="M96 342 L304 468 L304 620 L96 491Z" fill="#9F9182"/>
+<path d="M304 468 L750 291 L750 442 L304 620Z" fill="url(#slab)"/>
+<path d="M176 225 L525 97 L688 188 L336 324Z" fill="#E8E2D9"/>
+<path d="M176 225 L336 324 L336 459 L176 357Z" fill="#A89A8C"/>
+<path d="M336 324 L688 188 L688 320 L336 459Z" fill="#BAAFA1"/>
+<path d="M245 108 L525 0 L644 64 L359 179Z" fill="#E8E2D9"/>
+<path d="M245 108 L359 179 L359 293 L245 222Z" fill="#BAAFA1"/>
+<path d="M359 179 L644 64 L644 176 L359 293Z" fill="#B5A99A"/>
+<g fill="#26261F"><path d="M407 195l46-18v63l-46 18z"/><path d="M478 166l46-18v63l-46 18z"/><path d="M545 141l46-18v63l-46 18z"/><path d="M389 343l57-21v82l-57 23z"/><path d="M471 313l57-21v82l-57 23z"/><path d="M556 280l57-21v82l-57 23z"/></g>
+</g>
+<text x="60" y="850" font-family="Arial,sans-serif" font-size="130" font-weight="700" letter-spacing="-8" fill="#26261F">FORM.</text><text x="68" y="895" font-family="Arial,sans-serif" font-size="18" letter-spacing="7" fill="#26261F">A DIFFERENT KIND OF ADDRESS</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="940" viewBox="0 0 1200 940">
+<rect width="1200" height="940" fill="#E8E2D9"/>
+<g transform="translate(650 440)"><path d="M-260 -320H80V-130H260V320H-260Z" fill="#26261F"/><path d="M-205 -265H15V-75H205V265H-205Z" fill="#E8E2D9"/><rect x="-140" y="-150" width="108" height="108" fill="#26261F"/><rect x="35" y="35" width="110" height="110" fill="#26261F"/><rect x="-140" y="35" width="108" height="110" fill="#26261F"/></g>
+<text x="65" y="95" font-family="Arial,sans-serif" font-size="22" letter-spacing="6" fill="#26261F">MONO / 04</text>
+<text x="65" y="818" font-family="Arial,sans-serif" font-size="150" font-weight="700" letter-spacing="-10" fill="#26261F">MONO.</text><text x="73" y="863" font-family="Arial,sans-serif" font-size="17" letter-spacing="5" fill="#26261F">A HOME FOR NEW PERSPECTIVES</text>
+</svg>

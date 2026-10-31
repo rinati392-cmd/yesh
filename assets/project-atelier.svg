@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="940" viewBox="0 0 1200 940">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8E2D9"/><stop offset="1" stop-color="#BFAE9E"/></linearGradient><linearGradient id="brick" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#A98C75"/><stop offset="1" stop-color="#786454"/></linearGradient></defs>
+<rect width="1200" height="940" fill="url(#g)"/>
+<path d="M0 760 L1200 560 L1200 940H0" fill="#E8E2D9" opacity=".25"/>
+<g transform="translate(255 90)">
+<rect x="50" y="110" width="640" height="650" fill="#CBBBA9" transform="skewY(-8)"/>
+<rect x="125" y="38" width="540" height="730" fill="url(#brick)" transform="skewY(-8)"/>
+<g fill="#D8C5B2"><rect x="196" y="145" width="130" height="134"/><rect x="365" y="145" width="130" height="134"/><rect x="196" y="312" width="130" height="134"/><rect x="365" y="312" width="130" height="134"/><rect x="196" y="478" width="130" height="134"/><rect x="365" y="478" width="130" height="134"/></g>
+<g fill="#595047"><rect x="209" y="155" width="103" height="112"/><rect x="377" y="155" width="103" height="112"/><rect x="209" y="323" width="103" height="112"/><rect x="377" y="323" width="103" height="112"/><rect x="209" y="488" width="103" height="112"/><rect x="377" y="488" width="103" height="112"/></g>
+<rect x="125" y="650" width="540" height="36" fill="#E8E2D9"/>
+</g>
+<text x="65" y="80" fill="#494138" font-family="Arial" letter-spacing="6" font-size="22">ATELIER / 03</text>
+<rect x="53" y="685" width="655" height="197" fill="#26261F"/><text x="72" y="808" fill="#EEE8E0" font-family="Georgia,serif" font-size="105" font-style="italic">Atelier.</text><text x="75" y="852" fill="#E8E2D9" font-family="Arial" font-size="17" letter-spacing="5">DESIGNED TO BELONG</text>
+</svg>

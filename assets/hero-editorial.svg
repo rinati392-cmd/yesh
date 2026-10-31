@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C4B7A8"/><stop offset="1" stop-color="#8E8072"/></linearGradient><linearGradient id="slab" x2="1" y2="1"><stop stop-color="#E8E2D9"/><stop offset="1" stop-color="#BAAFA1"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
+<rect width="800" height="1000" fill="url(#bg)"/>
+<g fill="none" stroke="#E8E2D9" stroke-opacity=".35"><path d="M65 0V1000M400 0V1000M735 0V1000M0 190H800M0 820H800"/></g>
+<text x="55" y="77" font-family="Arial,sans-serif" font-size="20" letter-spacing="4" fill="#26261F">FORM / 001</text>
+<text x="745" y="77" text-anchor="end" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#26261F">A NEW ADDRESS</text>
+<g transform="translate(70 260) scale(.83)">
+<ellipse cx="355" cy="640" rx="390" ry="45" fill="#39362F" opacity=".14" filter="url(#shadow)"/>
+<path d="M96 342 L540 170 L750 291 L304 468Z" fill="#F3EEE7"/>
+<path d="M96 342 L304 468 L304 620 L96 491Z" fill="#9F9182"/>
+<path d="M304 468 L750 291 L750 442 L304 620Z" fill="url(#slab)"/>
+<path d="M176 225 L525 97 L688 188 L336 324Z" fill="#E8E2D9"/>
+<path d="M176 225 L336 324 L336 459 L176 357Z" fill="#A89A8C"/>
+<path d="M336 324 L688 188 L688 320 L336 459Z" fill="#BAAFA1"/>
+<path d="M245 108 L525 0 L644 64 L359 179Z" fill="#E8E2D9"/>
+<path d="M245 108 L359 179 L359 293 L245 222Z" fill="#BAAFA1"/>
+<path d="M359 179 L644 64 L644 176 L359 293Z" fill="#B5A99A"/>
+<g fill="#26261F"><path d="M407 195l46-18v63l-46 18z"/><path d="M478 166l46-18v63l-46 18z"/><path d="M545 141l46-18v63l-46 18z"/><path d="M389 343l57-21v82l-57 23z"/><path d="M471 313l57-21v82l-57 23z"/><path d="M556 280l57-21v82l-57 23z"/></g>
+</g>
+<text x="55" y="916" font-family="Arial,sans-serif" font-size="106" font-weight="700" letter-spacing="-6" fill="#26261F">FORM.</text>
+<text x="61" y="963" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#26261F">BRAND CONCEPT / 01</text>
+</svg>
