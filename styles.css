@@ -106,4 +106,7 @@
 .work-expand{opacity:1;left:14px;top:14px}
 }
 @media(max-width:360px){.link-arrow:not(.case-next-link){white-space:normal}.link-arrow:not(.case-next-link)>span{min-width:0}}
+/* Brand lockup — tagline spans exactly the logo's ink (SVG ink: x 14→297.4, bottom 68.46 of 306×82) */
+.brand{direction:ltr;container-type:inline-size}
+.brand-tagline{display:block;width:max-content;margin:-1.75cqi 0 0 4.575cqi;font:400 5.104cqi/1 var(--font-en);letter-spacing:.14em;color:var(--accent);white-space:nowrap;pointer-events:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
