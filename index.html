@@ -63,6 +63,13 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <!-- Plays once (no loop) and rests on its last frame. Reduced motion: no <source> matches, so only the poster shows and the video is never downloaded. -->
+        <video class="hero-video" aria-hidden="true" autoplay muted playsinline preload="auto" poster="assets/hero/YESH_video_poster.jpg" width="1280" height="720" disablepictureinpicture disableremoteplayback>
+          <source src="assets/hero/YESH_Hero_One_Play.mp4" type="video/mp4" media="(prefers-reduced-motion: no-preference)" />
+        </video>
+        <div class="hero-scrim" aria-hidden="true"></div>
+      </div>
       <div class="hero-rule" aria-hidden="true"></div>
       <div class="hero-shell shell">
         <div class="hero-content">
@@ -77,16 +84,6 @@
             <a href="#work" class="round-link" aria-label="גללו לפרויקטים"><span aria-hidden="true">↙</span></a>
           </div>
         </div>
-        <figure class="hero-art">
-          <div class="hero-art-number" lang="en" dir="ltr" aria-hidden="true">Y / 001</div>
-          <div class="hero-art-frame">
-            <!-- Plays once (no loop) and rests on its last frame. Reduced motion: no <source> matches, so only the poster shows and the video is never downloaded. -->
-            <video class="hero-video" autoplay muted playsinline preload="auto" poster="assets/hero/YESH_video_poster.jpg" width="1280" height="720" disablepictureinpicture disableremoteplayback role="img" aria-label="ציפור קטנה עומדת על אצבעה של ילדה, ממריאה מעל שדה פורח ונעלמת בשמיים באור שקיעה">
-              <source src="assets/hero/YESH_Hero_One_Play.mp4" type="video/mp4" media="(prefers-reduced-motion: no-preference)" />
-            </video>
-          </div>
-          <figcaption class="hero-art-foot" lang="en"><span>BRANDS MADE<br>TO BE REMEMBERED.</span><span>© YESH.</span></figcaption>
-        </figure>
       </div>
       <div class="hero-foot shell" lang="en">
         <span>JERUSALEM · WORKING EVERYWHERE</span>
