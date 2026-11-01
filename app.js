@@ -52,6 +52,13 @@ if('IntersectionObserver' in window && !reduceMotion) {
   });
 } else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
 
+/* Hero film: plays once, muted, and rests on its last frame. Reduced motion / data saver: poster only. */
+const heroVideo=$('.hero-video');
+if(heroVideo){
+  if(reduceMotion || navigator.connection?.saveData){ heroVideo.removeAttribute('autoplay'); heroVideo.querySelector('source')?.remove(); heroVideo.load(); }
+  else heroVideo.addEventListener('ended',()=>heroVideo.pause(),{once:true});
+}
+
 /* Silent preview loop on the films card — only in view, never with reduced motion or data saver */
 const saveData=navigator.connection?.saveData;
 document.querySelectorAll('.work-video').forEach(video=>{
