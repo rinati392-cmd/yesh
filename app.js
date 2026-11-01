@@ -129,7 +129,7 @@ if(form){
   const root=document.documentElement.dataset.root||'';
   const banner=document.createElement('div');
   banner.className='consent-banner';banner.setAttribute('role','region');banner.setAttribute('aria-label','הגדרות עוגיות');
-  banner.innerHTML=`<p>אנחנו משתמשים בעוגיות מדידה רק אם תאשרו. <a href="${root}privacy.html">מדיניות הפרטיות</a></p><div><button type="button" data-v="granted">מאשר/ת</button><button type="button" data-v="denied">רק הכרחיות</button></div>`;
+  banner.innerHTML=`<p>אנחנו משתמשים בעוגיות מדידה רק אם תאשרו. <a href="${root}privacy.html">מדיניות הפרטיות</a></p><div><button type="button" class="btn btn--primary" data-v="granted">מאשר/ת</button><button type="button" class="btn btn--secondary" data-v="denied">רק הכרחיות</button></div>`;
   banner.addEventListener('click',e=>{const v=e.target.dataset?.v;if(!v)return;write(v);banner.remove();if(v==='granted')load()});
   const show=()=>{if(!banner.isConnected)document.body.append(banner);banner.querySelector('button').focus()};
   document.querySelectorAll('[data-consent-open]').forEach(b=>{b.hidden=false;b.addEventListener('click',show)});
