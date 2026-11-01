@@ -70,3 +70,12 @@ Adobe documentation: https://helpx.adobe.com/fonts/web/web-design-and-developmen
 - `assets/yesh-logo-negative-on-black.svg`: ready-to-preview full-color background lockup.
 
 Colors are managed through the `:root` variables in `styles.css`; all design assets were harmonized with the requested tones.
+
+## Cache busting (GitHub Pages)
+
+GitHub Pages lets browsers cache CSS/JS for 10 minutes. Every page loads `styles.css?v=…` and `app.js?v=…`.
+**When you change `styles.css` or `app.js`, bump the version on all pages before pushing:**
+
+```bash
+sed -i '' -E 's/\?v=[0-9]+/?v=NEW_DATE/g' index.html privacy.html work/*.html
+```
