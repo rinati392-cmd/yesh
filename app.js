@@ -182,7 +182,7 @@ if(form){
   const status=$('#form-status');
   const startedAt=Date.now();
   const showStatus=(message,error=false)=>{status.textContent=message;status.classList.toggle('is-error',error)};
-  if(!SITE_CONFIG.formEndpoint && !SITE_CONFIG.contactEmail) showStatus('הטופס עדיין לא מחובר לכתובת יעד. בינתיים אפשר לפנות אלינו ישירות.');
+  if(!SITE_CONFIG.formEndpoint && !SITE_CONFIG.contactEmail) showStatus('הטופס עדיין לא פעיל, ולכן הפרטים לא יישלחו.');
   const validateContact=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)||/^[+\d()\s-]{9,20}$/.test(v);
   form.addEventListener('submit',async e=>{
     e.preventDefault();
@@ -191,9 +191,9 @@ if(form){
     const name=field('name'), contact=field('contact');
     form.querySelectorAll('[aria-invalid]').forEach(el=>el.removeAttribute('aria-invalid'));
     const fail=(id,msg)=>{const el=$(id);el.setAttribute('aria-invalid','true');el.focus();showStatus(msg,true)};
-    if(name.length<2) return fail('#lead-name','נא להזין שם מלא.');
-    if(!validateContact(contact)) return fail('#lead-contact','נא להזין מספר טלפון או כתובת אימייל תקינים.');
-    if(!$('#lead-consent').checked) return fail('#lead-consent','כדי שנוכל לחזור אליך יש לאשר את מדיניות הפרטיות.');
+    if(name.length<2) return fail('#lead-name','נא לכתוב שם.');
+    if(!validateContact(contact)) return fail('#lead-contact','נא לכתוב טלפון או אימייל תקינים.');
+    if(!$('#lead-consent').checked) return fail('#lead-consent','נא לסמן הסכמה למדיניות הפרטיות.');
     if(field('website')) return; // honeypot
 
     if(SITE_CONFIG.formEndpoint){
