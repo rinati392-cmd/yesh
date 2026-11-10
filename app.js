@@ -52,6 +52,41 @@ if('IntersectionObserver' in window && !reduceMotion) {
   });
 } else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
 
+/* Manifesto: types itself once, the first time it scrolls into view (skilled-typist pace, blinking caret). */
+(()=>{
+  const title=document.getElementById('manifesto-title');
+  if(!title || reduceMotion || !('IntersectionObserver' in window)) return;
+  title.setAttribute('aria-label',title.innerText.replace(/\s*\n\s*/g,' ').trim());
+  const chars=[];
+  const walker=document.createTreeWalker(title,NodeFilter.SHOW_TEXT);
+  const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node=>{
+    const frag=document.createDocumentFragment();
+    for(const ch of node.textContent){ const c=document.createElement('span'); c.className='type-char'; c.textContent=ch; frag.append(c); chars.push(c); }
+    if(frag.lastChild) frag.lastChild.dataset.pause='';   // each text run ends a line
+    node.replaceWith(frag);
+  });
+  if(!chars.length) return;
+  title.classList.add('is-typing');
+  const caret=document.createElement('span'); caret.className='type-caret'; caret.setAttribute('aria-hidden','true');
+  chars[0].before(caret);
+  const typeNext=i=>{
+    if(i>=chars.length){ setTimeout(()=>title.classList.add('is-typed'),1600); return; }
+    const c=chars[i]; c.classList.add('is-on'); c.after(caret);
+    const next=chars[i+1];
+    let delay=55+Math.random()*45;               // ~75 wpm with a human rhythm
+    if(c.textContent===' ') delay+=25;
+    if(c.textContent==='.') delay+=380;
+    if('pause' in c.dataset) delay+=260;          // short pause at each line break
+    setTimeout(()=>typeNext(i+1),delay);
+  };
+  const io=new IntersectionObserver(([entry])=>{
+    if(!entry.isIntersecting) return;
+    io.disconnect(); setTimeout(()=>typeNext(0),350);
+  },{threshold:.45});
+  io.observe(title);
+})();
+
 /* Hero film: seamless endless loop. A twin <video> starts from 0 just before the end and crossfades in,
    so the cut from the last frame (sky) back to the first (close-up) is never seen and playback never stops.
    Reduced motion / data saver: poster only. */
