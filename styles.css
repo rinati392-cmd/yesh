@@ -187,3 +187,5 @@
 .form-status{margin-top:12px}
 .footer{padding:26px 0}
 }
+@media(min-width:901px){.intro-grid>.intro-content{grid-column:2}}
+@media(min-width:901px){.case-statement>div{grid-column:2}}
