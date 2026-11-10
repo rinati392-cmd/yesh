@@ -1,6 +1,6 @@
 :root{
   --ink:#26261f;--ink-2:#26261f;--paper:#e8e2d9;--paper2:#e8e2d9;--white:#e8e2d9;--muted:#867d72;--line:#7e756b;--accent:#baafa1;
-  --font-he:"Google Sans",Arial,sans-serif;
+  --font-he:"Assistant",Arial,sans-serif;
   --font-en:"futura-pt",sans-serif;
   --he:var(--font-he);--en:var(--font-en);
   --radius:3px;--btn-h:48px;--btn-pad:28px;--ease:200ms ease;--header-h:102px;
@@ -139,7 +139,7 @@
 .circular-carousel:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)}
 .circular-carousel__view{position:absolute;inset:0}
 .circular-carousel[data-shape='wheel'] .circular-carousel__view{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
-.circular-carousel[data-shape='panorama'] .circular-carousel__view{-webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)}
+/* Panorama edge fade: gradient overlays, not mask-image (a mask over this 3D ring makes Chromium blank the whole carousel). */.circular-carousel[data-shape='panorama'] .circular-carousel__view::before,.circular-carousel[data-shape='panorama'] .circular-carousel__view::after{content:"";position:absolute;top:0;bottom:0;width:12%;z-index:3;pointer-events:none}.circular-carousel[data-shape='panorama'] .circular-carousel__view::before{left:0;background:linear-gradient(to right,#26261f,rgba(38,38,31,0))}.circular-carousel[data-shape='panorama'] .circular-carousel__view::after{right:0;background:linear-gradient(to left,#26261f,rgba(38,38,31,0))}
 .circular-carousel__stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease}
 .circular-carousel[data-ready] .circular-carousel__stage{opacity:1}
 .circular-carousel__camera,.circular-carousel__ring,.circular-carousel__card{width:0;height:0;transform-style:preserve-3d}

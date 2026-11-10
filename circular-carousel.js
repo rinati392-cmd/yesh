@@ -88,7 +88,7 @@
         const move = axis === 'x'
           ? `translate3d(0px, ${shift}px, ${depth}px) rotateX(${-turn}deg)`
           : `translate3d(${shift}px, 0px, ${depth}px) rotateY(${turn}deg)`;
-        return { index, total, start, end, size: end - start, move };
+        return { index, total, start, end, size: end - start, move, deg: (alpha * 180) / Math.PI };
       });
     })();
 
@@ -154,7 +154,11 @@
         'data-cc-index': String(index), role: 'group', 'aria-roledescription': 'slide',
         'aria-label': `${item.alt || item.title || `Image ${index + 1}`}, ${index + 1} ${o.ofLabel} ${count}`
       });
-      tiles.forEach(tile => card.append(renderTile(item, tile, false)));
+      card.ccTiles = tiles.map(tile => {
+        const node = renderTile(item, tile, false);
+        card.append(node);
+        return { node, deg: tile.deg, hidden: false };
+      });
       if (layout.backfaces) tiles.forEach(tile => card.append(renderTile(item, tile, true)));
       ring.append(card);
       return card;
@@ -355,7 +359,16 @@
         card.style.transform = transform;
         const world = wrap(base + angle);
         const facing = Math.cos(world * TO_RAD);
-        if (s.layout.inward) card.style.visibility = Math.abs(world) > 86 ? 'hidden' : '';
+        if (s.layout.inward) {
+          /* The eye sits at the ring's centre: geometry that reaches the eye plane makes Chromium drop the
+             whole 3D layer (the "flicker"). Cull each curved tile well before it gets there. */
+          const far = Math.abs(world) > 110;
+          card.style.visibility = far ? 'hidden' : '';
+          if (!far) for (const tile of card.ccTiles) {
+            const hide = Math.cos((world - tile.deg) * TO_RAD) < 0.2;
+            if (hide !== tile.hidden) { tile.hidden = hide; tile.node.style.visibility = hide ? 'hidden' : ''; }
+          }
+        }
         card.style.setProperty('--cc-depth', (s.depthFade * Math.pow((1 - facing) / 2, 1.25)).toFixed(3));
       }
 

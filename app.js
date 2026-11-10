@@ -127,7 +127,7 @@ if(carouselRoot && window.createCircularCarousel){
   const ctaName=cta?.querySelector('bdi');
   const small=window.matchMedia('(max-width:650px)').matches;
   const carousel=window.createCircularCarousel(carouselRoot,items,{
-    preset:'panorama',intro:'rise',cardWidth:small?170:220,aspectRatio:.75,speed:14,captions:true,tilt:0,perspective:1800,
+    preset:'panorama',intro:'rise',cardWidth:small?170:220,aspectRatio:.75,speed:14,parallax:0,captions:true,tilt:0,perspective:1800,
     cornerRadius:3,fadeColor:'#26261f',label:'עבודות נבחרות',ofLabel:'מתוך',
     onChange:(index,item)=>{ if(cta){ cta.href=item.href; ctaName.textContent=item.title; } },
     onItemClick:(item,index,wasFront)=>{ if(wasFront) window.location.href=item.href; }
