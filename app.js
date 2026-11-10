@@ -109,19 +109,19 @@ if(carouselRoot && window.createCircularCarousel){
   };
   const shot=(project,src,alt)=>Object.assign({src,alt},P[project]);
   const items=[
-    shot('tzurim','assets/work/tzurim/tzurim-04.jpg','ברושור מתקפל של Tzurim: כריכה כחולה, מפת שכונה מאוירת והדמיות פנים'),
-    shot('tzurim','assets/work/tzurim/tzurim-02.jpg','שלט חוצות מואר של Tzurim על קיר עירוני ועובר אורח חולף לידו'),
-    shot('tzurim','assets/work/tzurim/tzurim-03.jpg','מודעה כפולה של Tzurim במגזין: ילדה מצביעה על הדמיית המגדל בלילה'),
-    shot('tzurim','assets/work/tzurim/tzurim-05.jpg','גדר שילוט רחבה של Tzurim לאורך רחוב עם הסלוגן והלוגו'),
-    shot('tzurim','assets/work/tzurim/tzurim-08.jpg','שקית נייר כחולה של Tzurim עם הלוגו בחול'),
+    shot('tzurim','assets/work/carousel/tzurim-04.jpg','ברושור מתקפל של Tzurim: כריכה כחולה, מפת שכונה מאוירת והדמיות פנים'),
+    shot('tzurim','assets/work/carousel/tzurim-02.jpg','שלט חוצות מואר של Tzurim על קיר עירוני ועובר אורח חולף לידו'),
+    shot('tzurim','assets/work/carousel/tzurim-03.jpg','מודעה כפולה של Tzurim במגזין: ילדה מצביעה על הדמיית המגדל בלילה'),
+    shot('tzurim','assets/work/carousel/tzurim-05.jpg','גדר שילוט רחבה של Tzurim לאורך רחוב עם הסלוגן והלוגו'),
+    shot('tzurim','assets/work/carousel/tzurim-08.jpg','שקית נייר כחולה של Tzurim עם הלוגו בחול'),
     shot('bareket','assets/work/bareket/bareket-02.jpg','מודעת עיתון של BAREKET בירוק כהה עם הדמיית הבניין ומשפחה בתוך האות B'),
     shot('bareket','assets/work/bareket/bareket-03.jpg','יד מחזיקה טלפון עם מודעת מובייל של BAREKET'),
     shot('bareket','assets/work/bareket/bareket-04.jpg','דוגמה גרפית של אותיות B קוויות בשורות אלכסוניות'),
     shot('bareket','assets/work/bareket/bareket-06.jpg','תיק בד לבן עם הלוגו BAREKET, נישא על כתף'),
-    shot('films','assets/work/films/film-02.jpg','פריים מסרטון נדל״ן: זוג צועד לאורך אגם מול מגדלי מגורים בשקיעה'),
-    shot('films','assets/work/films/film-01.jpg','פריים מסרטון נדל״ן: אם ובתה מביטות בבניין מגורים חדש בשקיעה'),
-    shot('films','assets/work/films/film-04.jpg','פריים מסרטון נדל״ן: מרפסת דירה מול נוף הרים בשקיעה'),
-    shot('films','assets/work/films/film-03.jpg','פריים מסרטון נדל״ן: ילדים וכלב רצים בשביל לעבר שכונה חדשה')
+    shot('films','assets/work/carousel/film-02.jpg','פריים מסרטון נדל״ן: זוג צועד לאורך אגם מול מגדלי מגורים בשקיעה'),
+    shot('films','assets/work/carousel/film-01.jpg','פריים מסרטון נדל״ן: אם ובתה מביטות בבניין מגורים חדש בשקיעה'),
+    shot('films','assets/work/carousel/film-04.jpg','פריים מסרטון נדל״ן: מרפסת דירה מול נוף הרים בשקיעה'),
+    shot('films','assets/work/carousel/film-03.jpg','פריים מסרטון נדל״ן: ילדים וכלב רצים בשביל לעבר שכונה חדשה')
   ];
   const cta=$('#work-carousel-link');
   const ctaName=cta?.querySelector('bdi');

@@ -11,7 +11,7 @@
     panorama: { axis: 'y', tilt: 0, perspective: 0, curve: 1, spread: 1, inward: true, billboard: false, backfaces: false, window: 0 }
   };
 
-  const INTRO_LENGTH = { assemble: 1500, rise: 1400, spin: 1800, none: 0 };
+  const INTRO_LENGTH = { assemble: 1500, rise: 800, spin: 1800, none: 0 };
   const TILES = 8;
   const OVERLAP = 2.5;
   const DRAG_THRESHOLD = 5;
@@ -140,6 +140,8 @@
       Object.assign(frame.style, { height: `${axis === 'x' ? size : cardH}px`, borderRadius: frameRadius });
       const img = el('img', 'circular-carousel__photo', { src: item.src, alt: '', draggable: 'false', decoding: 'async' });
       Object.assign(img.style, { left: `${photo.left}px`, top: `${photo.top}px`, width: `${photo.width}px`, height: `${photo.height}px` });
+      const shown = () => img.classList.add('is-loaded');
+      if (img.complete && img.naturalWidth) shown(); else { img.addEventListener('load', shown, { once: true }); img.addEventListener('error', shown, { once: true }); }
       frame.append(img);
       if (back) frame.append(el('div', 'circular-carousel__inner'));
       frame.append(el('div', 'circular-carousel__shade'));
@@ -251,7 +253,7 @@
         return { radius: 1 + 0.6 * (1 - p), lift: 0 };
       }
       if (type === 'rise') {
-        const p = easeOutQuint(clamp((elapsed - (reach / 180) * 480) / 900, 0, 1));
+        const p = easeOutQuint(clamp((elapsed - (reach / 180) * 260) / 540, 0, 1));
         return { radius: 1, lift: (1 - p) * state.drop };
       }
       if (type === 'spin') {
@@ -492,23 +494,17 @@
     new ResizeObserver(() => { measure(); wake(); }).observe(root);
     new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
+      if (visible && !ready) start();
       if (visible) wake(); else { cancelAnimationFrame(raf); raf = 0; state.last = 0; }
     }).observe(root);
 
-    /* Start once the first images are decoded (or after 2.4s), then play the intro. */
-    const load = src => new Promise(resolve => {
-      const image = new Image();
-      image.decoding = 'async';
-      image.onload = () => (image.decode ? image.decode().then(resolve, resolve) : resolve());
-      image.onerror = resolve;
-      image.src = src;
-    });
-    Promise.race([Promise.all(list.slice(0, 16).map(item => load(item.src))), new Promise(r => setTimeout(r, 2400))]).then(() => {
+    /* Show the ring straight away; images fade in as they arrive. The intro plays when the carousel scrolls into view. */
+    function start() {
       ready = true;
       root.setAttribute('data-ready', '');
       state.introDone = false; state.intro = null;
       wake();
-    });
+    }
 
     measure();
     render(performance.now());
