@@ -167,20 +167,23 @@
 @media(max-width:650px){.work .work-carousel{height:440px}}
 @media(prefers-reduced-motion:reduce){.circular-carousel__stage,.circular-carousel__reel,.circular-carousel__photo{transition:none}.circular-carousel__caption,.circular-carousel__title{animation:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
-/* Contact + footer = one full screen on desktop */
-@media(min-width:901px){
+/* Contact + footer = one full screen on desktop and tablet */
+@media(min-width:651px){
 #contact{scroll-margin-top:calc(-1 * var(--header-h))}
 .contact{--footer-h:97px;min-height:calc(100vh - var(--footer-h));min-height:calc(100svh - var(--footer-h));display:flex;align-items:center;padding-block:calc(var(--header-h) + 2vh) 5vh}
 .contact-grid{width:var(--shell);grid-template-columns:1fr 1fr;gap:clamp(56px,7vw,128px);align-items:center}
 .contact-grid .section-index{margin-bottom:clamp(18px,3.2vh,36px)}
 .contact-title{font-size:clamp(52px,min(5.6vw,9.6vh),108px)}
 .contact-copy{font-size:18px;line-height:1.7;margin:clamp(18px,3.2vh,36px) 0 clamp(18px,3.6vh,44px)}
-.contact-form{padding-top:0;display:flex;flex-direction:column;max-width:480px;width:100%;justify-self:end}
-.form-field{margin-bottom:clamp(18px,3.2vh,32px)}
-.form-field :is(input,textarea){font-size:19px;padding:8px 0 12px}
+.contact-form{padding-top:0;display:grid;grid-template-columns:1fr 1fr;column-gap:28px;align-content:center}
+.contact-form>*{grid-column:1/-1}
+.contact-form>.form-field:nth-child(-n+2){grid-column:auto}
+.form-field{margin-bottom:clamp(14px,2.6vh,26px)}
+.form-field :is(input,textarea){font-size:18px;padding:6px 0 10px}
 .form-field textarea{resize:none}
-.form-consent{margin:0 0 clamp(20px,3.4vh,34px)}
+.form-consent{margin:0 0 clamp(16px,2.8vh,28px)}
 .contact-form .submit-button{justify-self:start}
+.contact-grid{gap:clamp(40px,6vw,128px)}
 .form-status{margin-top:12px}
 .footer{padding:26px 0}
 }
@@ -189,13 +192,14 @@
 /* Contact form: calm, readable, easy to hit */
 .form-field label{font-size:15px;color:#d0c6b9;margin-bottom:6px}
 .form-field .form-optional{color:#a99f93;font-size:13px}
-.form-field :is(input,textarea){min-height:48px;transition:border-color .2s}
+.form-field :is(input,textarea){min-height:44px;transition:border-color .2s}
+.form-field textarea{resize:none}
 .form-field :is(input,textarea):hover{border-bottom-color:#a99f93}
 .form-field :is(input,textarea):focus{outline:none;border-bottom-color:var(--paper);box-shadow:0 1px 0 var(--paper)}
 .form-field :is(input,textarea):focus-visible{outline:none}
 .form-consent{align-items:center;font-size:15px;line-height:1.5}
 .form-consent input{width:22px;height:22px;margin:0;cursor:pointer}
 .form-consent label{cursor:pointer;padding-block:10px}
-.contact-form .submit-button{align-self:flex-start;min-width:180px;justify-content:space-between}
+.contact-form .submit-button{min-width:180px;justify-content:space-between}
 .form-status{font-size:14px}
 .contact-copy{font-size:19px}
