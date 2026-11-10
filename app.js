@@ -52,11 +52,41 @@ if('IntersectionObserver' in window && !reduceMotion) {
   });
 } else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
 
-/* Hero film: plays once, muted, and rests on its last frame. Reduced motion / data saver: poster only. */
+/* Hero film: seamless endless loop. A twin <video> starts from 0 just before the end and crossfades in,
+   so the cut from the last frame (sky) back to the first (close-up) is never seen and playback never stops.
+   Reduced motion / data saver: poster only. */
 const heroVideo=$('.hero-video');
 if(heroVideo){
   if(reduceMotion || navigator.connection?.saveData){ heroVideo.removeAttribute('autoplay'); heroVideo.querySelector('source')?.remove(); heroVideo.load(); }
-  else heroVideo.addEventListener('ended',()=>heroVideo.pause(),{once:true});
+  else{
+    const FADE=1.2; // seconds of overlap between the end and the next start
+    const twin=heroVideo.cloneNode(true);
+    twin.removeAttribute('autoplay');
+    twin.muted=true;
+    twin.classList.add('is-back');
+    heroVideo.classList.add('is-front');
+    heroVideo.after(twin);
+    let front=heroVideo, back=twin, fading=false;
+    const tick=()=>{
+      const d=front.duration;
+      if(!fading && d && front.currentTime>=d-FADE){
+        fading=true;
+        back.currentTime=0;
+        back.play().then(()=>{
+          back.classList.replace('is-back','is-front');
+          front.classList.replace('is-front','is-leaving');
+          setTimeout(()=>{
+            front.pause();
+            front.classList.replace('is-leaving','is-back');
+            [front,back]=[back,front];
+            fading=false;
+          },FADE*1000);
+        }).catch(()=>{ front.loop=true; }); // autoplay refused for the twin: fall back to a plain loop
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
 }
 
 /* Silent preview loop on the films card — only in view, never with reduced motion or data saver */

@@ -122,4 +122,9 @@
 .main-nav .gooey-nav__item[data-active] .gooey-nav__link{color:var(--gn-ink)}
 .main-nav .gooey-nav__link:focus-visible{outline:2px solid var(--gn-ink);outline-offset:2px}
 @media(hover:hover){.main-nav .gooey-nav__link:hover{color:var(--gn-ink)}}
+/* Hero loop crossfade (see app.js): front fades in over the leaving one; scrim always on top */
+.hero-video.is-front{z-index:1;opacity:1;transition:opacity 1.2s linear}
+.hero-video.is-leaving{z-index:0;opacity:1}
+.hero-video.is-back{z-index:0;opacity:0;transition:none}
+.hero-scrim{z-index:2}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
