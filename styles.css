@@ -109,4 +109,17 @@
 /* Brand lockup — tagline spans exactly the logo's ink (SVG ink: x 14→297.4, bottom 68.46 of 306×82) */
 .brand{direction:ltr;container-type:inline-size}
 .brand-tagline{display:block;width:max-content;margin:-1.75cqi 0 0 4.575cqi;font:400 5.104cqi/1 var(--font-en);letter-spacing:.14em;color:var(--accent);white-space:nowrap;pointer-events:none}
+/* ━━ GooeyNav (React Bits port, see gooey-nav.js) — header menu ━━ */
+.gooey-nav{--gn-pad:6px;--gn-gap:4px;--gn-font:15px;--gn-x:16px;--gn-y:9px;--gn-ink:var(--paper);--gn-muted:rgba(232,226,217,.72);position:relative;display:inline-flex;max-width:100%;font-size:var(--gn-font);line-height:1.2}
+.gooey-nav__stage{position:relative;max-width:100%}
+.gooey-nav__canvas{position:absolute;top:0;left:0;pointer-events:none}
+.gooey-nav__fallback{position:absolute;top:0;left:0;display:none;border-radius:999px;background:var(--gn-pill);pointer-events:none;transition:transform var(--ease),width var(--ease),opacity var(--ease)}
+.gooey-nav__list{position:relative;display:flex;flex-wrap:nowrap;gap:var(--gn-gap);margin:0;padding:0;list-style:none}
+.gooey-nav__list--active{position:absolute;inset:0;color:var(--gn-active-ink);visibility:hidden;clip-path:inset(100%);pointer-events:none}
+.gooey-nav__item{display:flex}
+.main-nav .gooey-nav__link{display:inline-flex;align-items:center;min-height:44px;padding:var(--gn-y) var(--gn-x);border:none;border-radius:999px;background:none;color:var(--gn-muted);font:400 var(--gn-font)/1.2 var(--font-he);text-decoration:none;white-space:nowrap;cursor:pointer;transition:color .2s ease;-webkit-tap-highlight-color:transparent}
+.gooey-nav__list--active .gooey-nav__link{color:inherit}
+.main-nav .gooey-nav__item[data-active] .gooey-nav__link{color:var(--gn-ink)}
+.main-nav .gooey-nav__link:focus-visible{outline:2px solid var(--gn-ink);outline-offset:2px}
+@media(hover:hover){.main-nav .gooey-nav__link:hover{color:var(--gn-ink)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
